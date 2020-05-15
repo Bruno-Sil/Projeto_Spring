@@ -37,6 +37,7 @@ public class CategoriaController {
 	public Categoria excluir (@PathVariable Short codigo) {
 		Optional<Categoria> categoria = categoriaRepository.findById(codigo);
 		categoriaRepository.delete(categoria.get());
-		return categoria.get();
+		Categoria categoriaRetorno = categoria.get();
+		return categoriaRetorno;
 	}
 }
