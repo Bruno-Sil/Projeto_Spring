@@ -1,5 +1,7 @@
 package br.pro.bruno.drogaria.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,11 +20,11 @@ public class CategoriaController {
 	@Autowired
 	private CategoriaService categoriaService;
 	 
-//	 @GetMapping
-//     public List<Categoria> listar() {
-//    	List<Categoria> categorias = categoriaRepository.findAll();
-//    	 return categorias;
-//    }
+	 @GetMapping
+     public List<Categoria> listar() {
+   	  List<Categoria> categorias = categoriaService.listar();
+   	  return categorias;
+   }
 	 
 	 @GetMapping("/{codigo}")
 	 public Categoria buscarPorCodigo(@PathVariable Short codigo) {
